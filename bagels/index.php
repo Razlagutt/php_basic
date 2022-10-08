@@ -1,10 +1,20 @@
-<?php require_once('head.php'); ?>
+<?php
+define("NUM_DIGITS",  "3"); 
+define("MAX_GUESSES", "10");
+require_once('head.php'); 
+?>
         <div class="container-fluid py-5">
-            <a class="text-dark text-decoration-none" href="<?=$_SERVER['SCRIPT_NAME']?>"><h1 class="display-5 fw-bold">Bangels</h1></a>
-            <p class="col-md-8 fs-4">В этой игре необходимо по подсказкам угадать секретное число из трех цифр. В ответ на ваши попытки угадать игра выдает одну из трех подсказок: Pico, если вы угадали правильную цифру на неправильном месте, Fermi, если в вашей догадке есть правильная цифра на правильном месте, и Bagels, если в догадке не содержится правильных цифр. На угадывание секретного числа у вас десять попыток.</p>
+            <a class="text-dark text-decoration-none" href="<?=$_SERVER['SCRIPT_NAME']?>"><h1 class="display-5 fw-bold">Bagels</h1></a>
+            <p class="col-md-8 fs-4">В этой игре необходимо по подсказкам угадать секретное число из трех цифр. В ответ на ваши попытки угадать игра выдает одну из трех подсказок: 
+            <ul class="fs-4">
+                <li>Pico - вы угадали правильную цифру на неправильном месте;</li>
+                <li>Fermi - если в вашей догадке есть правильная цифра на правильном месте;</li>
+                <li>Bagels - если в догадке не содержится правильных цифр.</li>
+            </ul></p>    
+            <p class="col-md-8 fs-4">На угадывание секретного числа у вас <?=MAX_GUESSES?> попыток.</p>
             <form action="main.php" method="POST">
-                <input type="hidden" name="num_digits" value="3">
-                <input type="hidden" name="max_guesses" value="10">
+                <input type="hidden" name="num_digits" value="<?=NUM_DIGITS?>">
+                <input type="hidden" name="max_guesses" value="<?=MAX_GUESSES?>">
                 <button type="submit" class="btn btn-primary btn-lg">Играть!</button>            
             </form>
         </div>

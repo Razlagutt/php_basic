@@ -10,24 +10,24 @@ define("MAX_GUESSES", $_REQUEST['max_guesses']);
 require_once('head.php');
 ?>
     <div class="container-fluid py-5">
-            <a class="text-dark text-decoration-none" href="index.php"><h1 class="display-5 fw-bold">Bangels</h1></a>
+            <a class="text-dark text-decoration-none" href="index.php"><h1 class="display-5 fw-bold">Bagels</h1></a>
             <div class="row">
                 <div class="col">
                     <form action="<?=$_SERVER['SCRIPT_NAME']?>" method="POST">
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Результат</span>
+                            <span class="input-group-text">Ответ</span>
                             <div class="form-floating">
-                                <textarea class="form-control" rows="10" name="textarea" style="height: 250px; resize: none" readonly><?=$textarea?></textarea>
+                                <textarea class="form-control" rows="<?=MAX_GUESSES?>" name="textarea" style="height: 250px; resize: none" readonly><?=$textarea?></textarea>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Попытка</span>
+                            <span class="input-group-text">Число</span>
                             <input class="form-control" type="text" maxlength="<?=NUM_DIGITS?>" name="guess" autofocus>
                         </div>
                         <input type="hidden" name="num_digits" value="<?=NUM_DIGITS?>">
                         <input type="hidden" name="max_guesses" value="<?=MAX_GUESSES?>">
                         <input type="hidden" class="form-control" name="count" value="<?=$count?>">
-                        <button type="submit" class="btn btn-primary" name="submit">Отправить</button>
+                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Ввод</button>
                     </form>
                  </div>
             </div>
