@@ -1,8 +1,9 @@
 <?php
 require_once('game_logic.php');
 
-$count    = 0;
-$textarea = check_user_guess($count);
+$count      = 0;
+$secret_num = $_REQUEST['secret_num'];
+$textarea   = check_user_guess($count, $secret_num);
 
 define("NUM_DIGITS",  $_REQUEST['num_digits']);
 define("MAX_GUESSES", $_REQUEST['max_guesses']);
@@ -26,6 +27,7 @@ require_once('head.php');
                         </div>
                         <input type="hidden" name="num_digits" value="<?=NUM_DIGITS?>">
                         <input type="hidden" name="max_guesses" value="<?=MAX_GUESSES?>">
+                        <input type="hidden" name="secret_num" value="<?=$secret_num?>">
                         <input type="hidden" class="form-control" name="count" value="<?=$count?>">
                         <button type="submit" class="btn btn-primary btn-lg" name="submit">Ввод</button>
                     </form>

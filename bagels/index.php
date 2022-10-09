@@ -1,6 +1,9 @@
 <?php
 define("NUM_DIGITS",  "3"); 
 define("MAX_GUESSES", "10");
+
+require_once('game_logic.php');
+$secret_num = get_secret_num();
 require_once('head.php'); 
 ?>
         <div class="container-fluid py-5">
@@ -15,6 +18,7 @@ require_once('head.php');
             <form action="main.php" method="POST">
                 <input type="hidden" name="num_digits" value="<?=NUM_DIGITS?>">
                 <input type="hidden" name="max_guesses" value="<?=MAX_GUESSES?>">
+                <input type="hidden" name="secret_num" value="<?=$secret_num?>">
                 <button type="submit" class="btn btn-primary btn-lg">Играть!</button>            
             </form>
         </div>
