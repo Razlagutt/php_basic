@@ -23,7 +23,7 @@ require_once('head.php');
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Число</span>
-                            <input class="form-control" type="text" maxlength="<?=NUM_DIGITS?>" name="guess" autofocus>
+                            <input class="form-control" type="text" maxlength="<?=NUM_DIGITS?>" pattern="^[0-9]+$" name="guess" autofocus>
                         </div>
                         <input type="hidden" name="num_digits" value="<?=NUM_DIGITS?>">
                         <input type="hidden" name="max_guesses" value="<?=MAX_GUESSES?>">

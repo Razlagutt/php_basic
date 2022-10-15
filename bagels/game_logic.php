@@ -8,7 +8,7 @@ function get_secret_num()
 
 function get_clues(&$secret_num, &$guess)
 {
-    if ($guess == $secret_num)
+    if ($guess == $secret_num) // <=>
     {
         header('Location: win.php');
         exit;
@@ -45,7 +45,7 @@ function check_user_guess(&$count, &$secret_num)
     if (isset($_REQUEST['submit'])) {
         $count = $_REQUEST['count'];
         $count++;
-        if ($count < 11) {
+        if ($count < 10) {
             $guess     = $_REQUEST['guess'];
             $clues     = get_clues($secret_num, $guess);
             $textarea  = $_REQUEST['textarea'];
